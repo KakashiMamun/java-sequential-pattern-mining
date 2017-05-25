@@ -3,7 +3,6 @@ package com.github.chen0040.spm;
 
 import com.github.chen0040.spm.data.Sequence;
 import com.github.chen0040.spm.data.Sequences;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
 
@@ -33,6 +32,6 @@ public abstract class AbstractSequentialAssocRuleMiner implements SequentialAsso
 
 
    public Sequences findMaxPatterns(Iterable<? extends Sequence> database, List<String> uniqueItems) {
-       throw new NotImplementedException();
+       return null;
    }
 }

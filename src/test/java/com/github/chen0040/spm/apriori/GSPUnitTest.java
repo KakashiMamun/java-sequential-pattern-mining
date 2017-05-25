@@ -1,7 +1,6 @@
 package com.github.chen0040.spm.apriori;
 
 
-import com.github.chen0040.spm.data.ItemSetWithTimeId;
 import com.github.chen0040.spm.data.MetaData;
 import com.github.chen0040.spm.data.Sequence;
 import com.github.chen0040.spm.data.Sequences;
@@ -11,9 +10,6 @@ import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-
-import static org.testng.Assert.*;
 
 
 /**
@@ -37,7 +33,7 @@ public class GSPUnitTest {
 
 
    public List<Sequence> createSimpleSequentialData(){
-      List<Sequence> result = new ArrayList<>();
+      List<Sequence> database = new ArrayList<>();
 
       /*
       S1 	(1), (1 2 3), (1 3), (4), (3 6)
@@ -46,29 +42,14 @@ public class GSPUnitTest {
       S4 	(5), (7), (1 6), (3), (2), (3)
       */
 
-      result.add(seq("1", "1,2,3", "1,3", "4", "3,6"));
-      result.add(seq("1,4", "3", "2,3", "1,5"));
-      result.add(seq("5,6", "1,2", "4,6", "3", "2"));
-      result.add(seq("5", "7", "1,6", "3", "2", "3"));
+      database.add(Sequence.make("1", "1,2,3", "1,3", "4", "3,6"));
+      database.add(Sequence.make("1,4", "3", "2,3", "1,5"));
+      database.add(Sequence.make("5,6", "1,2", "4,6", "3", "2"));
+      database.add(Sequence.make("5", "7", "1,6", "3", "2", "3"));
 
-      return result;
-
-   }
-
-   private Sequence seq(String... args){
-
-      List<String> texts = new ArrayList<>();
-      for(String items : args){
-         texts.add(items);
-      }
-
-      List<ItemSetWithTimeId> itemSets = texts.stream().map(text -> new ItemSetWithTimeId(text.split(","))).collect(Collectors.toList());
-      Sequence sequence = new Sequence();
-      for(ItemSetWithTimeId element : itemSets) {
-         sequence.addElement(element);
-      }
-
-      return sequence;
+      return database;
 
    }
+
+
 }

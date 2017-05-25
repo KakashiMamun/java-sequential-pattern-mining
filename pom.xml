@@ -14,7 +14,7 @@
     <licenses>
         <license>
             <name>MIT</name>
-            <url>https://github.com/chen0040/java-sequential-pattern-mining/LICENSE</url>
+            <url>https://github.com/chen0040/java-sequential-pattern-mining/blob/master/LICENSE</url>
             <comments>MIT License</comments>
         </license>
     </licenses>
@@ -40,8 +40,8 @@
     </issueManagement>
 
 
-    <name>Frequent Pattern Mining Algorithms</name>
-    <description>Frequent pattern mining algorithms package</description>
+    <name>General Sequential Pattern Mining</name>
+    <description>Java implementation of GSP for frequent pattern mining</description>
     <url>https://github.com/chen0040/java-sequential-pattern-mining</url>
 
     <distributionManagement>

@@ -24,6 +24,23 @@ public class Sequence {
 
    }
 
+   public static Sequence make(String... args){
+
+      List<String> texts = new ArrayList<>();
+      for(String items : args){
+         texts.add(items);
+      }
+
+      List<ItemSetWithTimeId> itemSets = texts.stream().map(text -> new ItemSetWithTimeId(text.split(","))).collect(Collectors.toList());
+      Sequence sequence = new Sequence();
+      for(ItemSetWithTimeId element : itemSets) {
+         sequence.addElement(element);
+      }
+
+      return sequence;
+
+   }
+
 
    public List<ItemSetWithTimeId> getElements(){
       return elements;

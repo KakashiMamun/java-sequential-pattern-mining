@@ -13,19 +13,6 @@ import java.util.stream.Collectors;
 
 /**
  * Created by xschen on 8/2/2015.
- * implementation of the algorithm is based on Srikant & Agrawal, 1996
- *
- * The algorithm makes multiple passes over the data. The first pass determines the support of each item, that
- * is, the numbre of data-sequences that include the item. At the end of the first pas, the algorithm knows
- * which items are frequent, that is, have minimum support. Each such item yields a 1-element frequent sequence
- * consisting of that item.
- *
- * Each subsequent pass starts with a seed set: the frequent sequences found in the previous pass. The seed set
- * is used to generate new potentially frequent sequences, called candidate sequences. Each candidate sequence
- * has one more item than a seed sequence; so all the candidate sequences in a pass will have the same number of
- * items. The support for these candidate sequences is found during the pass over the data. At the end of the
- * pass, the algorithm determines which of the candidate sequences are actually frequent. These frequent candidates
- * become the seed for the next pass.
  */
 public class GSP extends AbstractSequentialAssocRuleMiner {
 
